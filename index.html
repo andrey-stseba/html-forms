@@ -16,18 +16,45 @@
         <form action="#" method="post">
           <label>
             <span>Your name</span>
-            <input type="text" placeholder="first name" />
-            <input type="text" placeholder="last name" />
+            <input
+              type="text"
+              placeholder="first name"
+              autofocus
+              pattern="[A-Z][a-z]{2,16}(-[A-Z][a-z]{0,19})?"
+            />
+            <input
+              type="text"
+              placeholder="last name"
+              pattern="[A-Z][a-z]{2,16}(-[A-Z][a-z]{0,19})?"
+            />
           </label>
           <label>
             <span>Your email</span>
             <input type="email" placeholder="your_mail@mail.com" />
           </label>
-          <label>
-            <span>Phone *</span>
-            <input type="tel" placeholder="38" maxlength="2" />
-            <input type="tel" placeholder="050" maxlength="3" />
-            <input type="tel" placeholder="1234567" maxlength="7" />
+          <label id="phoneBox">
+            <span id="spanPhoneBox">Phone *</span>
+            <input
+              id="phoneCod"
+              type="tel"
+              placeholder="00"
+              maxlength="2"
+              pattern="[0-9]{2}"
+            />
+            <input
+              id="phoneOperator"
+              type="tel"
+              placeholder="000"
+              maxlength="3"
+              pattern="[0-9]{3}"
+            />
+            <input
+              id="phone"
+              type="tel"
+              placeholder="1234567"
+              maxlength="7"
+              pattern="[0-9]{7}"
+            />
           </label>
           <label>
             <span>Message subject *</span>
@@ -37,12 +64,12 @@
               <option value="payment">Payment</option>
             </select>
           </label>
-          <label>
+          <label id="messageTextBox">
             <span class="messageText">Message *</span>
             <textarea cols="50" rows="5"></textarea>
           </label>
-          <hr />
-          <input type="submit" value="SUBMIT FORM" />
+
+          <input id="submitBox" type="submit" value="SUBMIT FORM" />
         </form>
       </section>
     </main>
