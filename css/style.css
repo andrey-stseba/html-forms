@@ -44,40 +44,53 @@ section {
 
 form {
   height: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: stretch;
 
   padding: 0px 20px;
 }
-
-label {
+.flexBox {
+  width: 100%;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: stretch;
+  justify-content: space-between;
 }
-
-span {
-  flex-grow: 1;
+.titlesBox {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.inputFieldsBox {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.phoneBox,
+.nameBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 input,
-select {
-  flex-grow: 2;
+select,
+label {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
 }
-
-#phoneCod,
-#phoneOperator {
-  max-width: 40px;
+.nameBox > input {
+  min-width: 49%;
 }
-
-#phone {
+.phoneBox > input {
+  max-width: 30%;
 }
 
 #submitBox {
-  flex-grow: inherit;
+  margin-top: 5%;
+  margin-left: 20%;
 }
 
 input:valid {
@@ -88,4 +101,28 @@ input:valid {
 input:invalid {
   border-color: red;
   background-color: coral;
+}
+
+@media screen and (max-width: 890px) {
+  .titlesBox {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+  }
+  .inputFieldsBox {
+    width: 69%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    height: 30px;
+    line-height: 15px;
+    margin-bottom: 10px;
+  }
+
+  #submitBox {
+    margin-top: 5%;
+    margin-left: 31%;
+  }
 }

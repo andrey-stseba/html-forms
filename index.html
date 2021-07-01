@@ -14,60 +14,73 @@
         <h2>Contact form</h2>
         <p>Please fill in your information and we'll be sending your order.</p>
         <form action="#" method="post">
-          <label>
-            <span>Your name</span>
-            <input
-              type="text"
-              placeholder="first name"
-              autofocus
-              pattern="[A-Z][a-z]{2,16}(-[A-Z][a-z]{0,19})?"
-            />
-            <input
-              type="text"
-              placeholder="last name"
-              pattern="[A-Z][a-z]{2,16}(-[A-Z][a-z]{0,19})?"
-            />
-          </label>
-          <label>
-            <span>Your email</span>
-            <input type="email" placeholder="your_mail@mail.com" />
-          </label>
-          <label id="phoneBox">
-            <span id="spanPhoneBox">Phone *</span>
-            <input
-              id="phoneCod"
-              type="tel"
-              placeholder="00"
-              maxlength="2"
-              pattern="[0-9]{2}"
-            />
-            <input
-              id="phoneOperator"
-              type="tel"
-              placeholder="000"
-              maxlength="3"
-              pattern="[0-9]{3}"
-            />
-            <input
-              id="phone"
-              type="tel"
-              placeholder="1234567"
-              maxlength="7"
-              pattern="[0-9]{7}"
-            />
-          </label>
-          <label>
-            <span>Message subject *</span>
-            <select name="subject">
-              <option value="other">Other</option>
-              <option value="delivery">Delivery</option>
-              <option value="payment">Payment</option>
-            </select>
-          </label>
-          <label id="messageTextBox">
-            <span class="messageText">Message *</span>
-            <textarea cols="50" rows="5"></textarea>
-          </label>
+          <div class="flexBox">
+            <div class="titlesBox">
+              <label for="name">Your name</label>
+              <label for="email">Your email</label>
+              <label for="phoneCod">Phone *</label>
+              <label for="">Message subject *</label>
+              <label for="messageArea">Message *</label>
+            </div>
+            <div class="inputFieldsBox">
+              <div class="nameBox">
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="first name"
+                  autofocus
+                  required
+                  pattern="[A-Z][a-z]{2,16}(-[A-Z][a-z]{0,19})?"
+                />
+                <input
+                  type="text"
+                  placeholder="last name"
+                  required
+                  pattern="[A-Z][a-z]{2,16}(-[A-Z][a-z]{0,19})?"
+                />
+              </div>
+
+              <input
+                id="email"
+                type="email"
+                required
+                placeholder="your_mail@mail.com"
+              />
+              <div class="phoneBox">
+                <input
+                  id="phoneCod"
+                  type="tel"
+                  required
+                  placeholder="00"
+                  maxlength="2"
+                  pattern="[0-9]{2}"
+                />
+                <input
+                  id="phoneOperator"
+                  type="tel"
+                  required
+                  placeholder="000"
+                  maxlength="3"
+                  pattern="[0-9]{3}"
+                />
+                <input
+                  id="phone"
+                  type="tel"
+                  required
+                  placeholder="1234567"
+                  maxlength="7"
+                  pattern="[0-9]{7}"
+                />
+              </div>
+
+              <select name="subject">
+                <option value="other">Other</option>
+                <option value="delivery">Delivery</option>
+                <option value="payment">Payment</option>
+              </select>
+              <textarea id="messageArea" cols="50" rows="5"></textarea>
+            </div>
+          </div>
 
           <input id="submitBox" type="submit" value="SUBMIT FORM" />
         </form>
